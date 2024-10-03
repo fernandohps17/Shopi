@@ -1,0 +1,63 @@
+.spacing_nav {
+    padding-top: 120px;
+
+    @media screen and (max-width: 1450px) {
+        padding-top: 130px;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #f8ebc0;
+    width: 100%;
+    padding: 30px 50px;
+
+    @media screen and (max-width: 1450px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    @media screen and (max-width: 750px) {
+        padding: 10px;
+    }
+}
+
+.nav_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0 50px;
+
+    @media screen and (max-width: 750px) {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        transition: 0.5s ease;
+
+        &:hover {
+            color: #f48727;
+        }
+    }
+
+    span {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    li {
+        list-style: none;
+        font-size: 18px;
+    }
+}
+
+.nav_items_email {
+    color: gray;
+}
