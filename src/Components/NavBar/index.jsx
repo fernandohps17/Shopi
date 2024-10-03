@@ -26,5 +26,5 @@ const NavBar = () => {
         </nav>
     )
 }
-// video 6
+
 export default NavBar
