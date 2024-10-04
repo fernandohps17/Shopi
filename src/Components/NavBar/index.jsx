@@ -1,8 +1,11 @@
+import { ShoppingCartContext } from '../../Context'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import './NavBar.scss'
-import React from 'react'
 
 const NavBar = () => {
+
+    const {count} = useContext(ShoppingCartContext)
     
     return (
         <nav className='nav'>
@@ -21,7 +24,7 @@ const NavBar = () => {
                 <li><NavLink to='/my-orders'>My Orders</NavLink></li>
                 <li><NavLink to='/my-account'>My Account</NavLink></li>
                 <li><NavLink to='/sign-in'>Sing In</NavLink></li>
-                <li><NavLink to='/'>🛒 0</NavLink></li>
+                <li><NavLink to='/'>🛒 {count}</NavLink></li>
             </ul>
         </nav>
     )

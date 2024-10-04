@@ -4,7 +4,9 @@ import Layout from '../../Components/Layout'
 const MyOrders = () => {
   return (
     <Layout>
-      My Orders
+      <header className='title_primary'>
+        <h1>My Orders</h1>
+      </header>
     </Layout>
   )
 }

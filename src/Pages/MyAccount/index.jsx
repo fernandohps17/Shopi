@@ -4,7 +4,9 @@ import Layout from '../../Components/Layout'
 const MyAccount = () => {
   return (
     <Layout>
-      My Account
+      <header className='title_primary'>
+        <h1>My Account</h1>
+      </header>
     </Layout>
   )
 }

@@ -4,7 +4,9 @@ import Layout from '../../Components/Layout'
 const NotFound = () => {
   return (
     <Layout>
-      Not Found
+      <header className='title_primary'>
+        <h1>Not Found</h1>
+      </header>
     </Layout>
   )
 }

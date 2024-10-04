@@ -1,8 +1,8 @@
+import { ShoppingCartProvider } from "../../Context"
 import { BrowserRouter } from "react-router-dom"
 import AppRoutes from "../../Components/AppRoutes"
 import NavBar from "../../Components/NavBar"
 import './App.scss'
-import { ShoppingCartProvider } from "../../Context"
 
 function App() {
 
