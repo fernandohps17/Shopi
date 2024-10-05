@@ -4,18 +4,26 @@ import './Card.scss'
 
 const Card = (data) => {
 
-    const { count, setCount, openProductDetail, setProductToShow } = useContext(ShoppingCartContext)
+    const { count, setCount, openProductDetail, setProductToShow, cartProducts, setCartProducts, openCheckoutSideMenu, closeProductDetail } = useContext(ShoppingCartContext)
 
     const showProduct = (productDetail) => {
         openProductDetail()
         setProductToShow(productDetail)
     }
 
+    const addProductsToCart = (event, productData) => {
+        event.stopPropagation()
+        setCount(count + 1)
+        setCartProducts([...cartProducts, productData])
+        openCheckoutSideMenu()
+        closeProductDetail()
+    }
+
     return (
         <div className='card' onClick={() => showProduct(data.data)}>
             <figure className='card_content'>
                 <img src={data.data.images[0]} alt={data.data.title} />
-                <div className='card_content_add' onClick={() => setCount(count + 1)}>+</div>
+                <div className='card_content_add' onClick={(event) => addProductsToCart(event, data.data)}>+</div>
                 <span className='card_content_category'>{data.data.category.name}</span>
             </figure>
             <p className='card_content_text'>

@@ -5,8 +5,7 @@ import './ProductDetail.scss'
 
 const ProductDetail = () => {
 
-    const { closeProductDetail, isProductDetailOpen, productToShow} = useContext(ShoppingCartContext)
-    console.log(productToShow)
+    const { closeProductDetail, isProductDetailOpen, productToShow } = useContext(ShoppingCartContext)
 
     return (
         <aside className={`${isProductDetailOpen ? 'product_detail' : ''}`}>
@@ -17,13 +16,19 @@ const ProductDetail = () => {
                 <div className='product_detail_close' onClick={() => closeProductDetail()}><XMarkIcon /></div>
             </div>
 
-            <div>
+            <div className='product_detail_content_images'>
                 <figure>
-                    <img src="" alt="" />
+                    <img src={productToShow.images} alt={productToShow.title} />
                 </figure>
+            </div>
+
+            <div className='product_detail_content_text'>
+                <p><b>Titulo:</b> {productToShow.title}</p>
+                <p><b>Precio:</b> {productToShow.price}$</p>
+                <p><b>Descripción:</b> {productToShow.description}</p>
             </div>
         </aside>
     )
 }
-// video 14
+
 export default ProductDetail

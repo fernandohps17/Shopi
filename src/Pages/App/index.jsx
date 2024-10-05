@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom"
 import AppRoutes from "../../Components/AppRoutes"
 import NavBar from "../../Components/NavBar"
 import './App.scss'
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <AppRoutes />
+        <CheckoutSideMenu />
       </BrowserRouter>
     </ShoppingCartProvider>
   )
