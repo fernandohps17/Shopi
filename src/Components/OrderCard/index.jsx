@@ -5,7 +5,7 @@ import React from 'react'
 const OrderCard = (props) => {
 
     const { id, title, imageUrl, price } = props
-// clase 18
+// clase 18 h m s minuto 0
     return (
         <div className='order_card'>
             <div className='order_card_content'>
