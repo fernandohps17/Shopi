@@ -5,8 +5,12 @@ import './CheckoutSideMenu.scss';
 import OrderCard from '../OrderCard';
 
 const CheckoutSideMenu = () => {
-    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts } = useContext(ShoppingCartContext)
-    console.log(cartProducts)
+    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts, setCartProducts } = useContext(ShoppingCartContext)
+    
+    const handleDelete = (id) => {
+        const filteredProducts = cartProducts.filter(product => product.id != id)
+        setCartProducts(filteredProducts)
+    }
 
     return (
         <aside className={`${isCheckoutSideMenuOpen ? 'checkout_side_menu' : ''}`}>
@@ -23,9 +27,11 @@ const CheckoutSideMenu = () => {
                         return (
                             <OrderCard
                                 key={product.id}
+                                id={product.id}
                                 title={product.title}
                                 imageUrl={product.images}
                                 price={product.price}
+                                handleDelete={handleDelete}
                             />
                         )
                     }))

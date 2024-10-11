@@ -4,8 +4,8 @@ import React from 'react'
 
 const OrderCard = (props) => {
 
-    const { id, title, imageUrl, price } = props
-// clase 18
+    const { id, title, imageUrl, price, handleDelete} = props
+
     return (
         <div className='order_card'>
             <div className='order_card_content'>
@@ -18,7 +18,7 @@ const OrderCard = (props) => {
 
                 <div className='order_card_content_price'>
                     <p>{price}$</p>
-                    <XMarkIcon className='order_card_content_icon' />
+                    <XMarkIcon className='order_card_content_icon' onClick={() => handleDelete(id)} />
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import { CheckIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 import React, { useContext } from 'react'
 import './Card.scss'
@@ -19,11 +20,30 @@ const Card = (data) => {
         closeProductDetail()
     }
 
+    const renderIcons = (id) => {
+
+        const isInCart = cartProducts.filter(product => product.id === id).length > 0
+
+        if(isInCart) {
+            return (
+                <div className='card_content_add_check'>\</div>
+            )
+        } else{
+            return (
+                <div className='card_content_add' onClick={(event) => addProductsToCart(event, data.data)}>+</div>
+            )
+        }
+    }
+
     return (
         <div className='card' onClick={() => showProduct(data.data)}>
             <figure className='card_content'>
                 <img src={data.data.images[0]} alt={data.data.title} />
-                <div className='card_content_add' onClick={(event) => addProductsToCart(event, data.data)}>+</div>
+
+
+                {renderIcons(data.data.id)}
+
+
                 <span className='card_content_category'>{data.data.category.name}</span>
             </figure>
             <p className='card_content_text'>
