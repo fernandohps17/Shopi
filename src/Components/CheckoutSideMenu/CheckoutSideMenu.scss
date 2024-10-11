@@ -70,3 +70,19 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.total_price {
+    padding: 0 10px;
+}
+
+.total_price_content {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+}
+
+.total_price_content_title {
+    font-weight: 600;
+    font-size: 18px;
+}
