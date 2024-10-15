@@ -1,6 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 import { totalPrice } from '../../Utils';
+import { Link } from 'react-router-dom';
 import React, { useContext } from 'react'
 import './CheckoutSideMenu.scss';
 import OrderCard from '../OrderCard';
@@ -24,8 +25,9 @@ const CheckoutSideMenu = () => {
 
         setOrder([...order, orderToAdd])
         setCartProducts([])
+        setCount(0)
     }
-
+    // video 22
     return (
         <aside className={`${isCheckoutSideMenuOpen ? 'checkout_side_menu' : ''}`}>
             <div className='checkout_side_menu_content'>
@@ -57,7 +59,9 @@ const CheckoutSideMenu = () => {
                     <span className='total_price_content_title'>Total:</span>
                     <span className='total_price_content_total'>{totalPrice(cartProducts)} $</span>
                 </p>
-                <button className='btn_checkout' onClick={() => handleCheckout()}>Checkout</button>
+                <Link to='/my-orders/last'>
+                    <button className='btn_checkout' onClick={() => handleCheckout()}>Checkout</button>
+                </Link>
             </div>
 
         </aside>

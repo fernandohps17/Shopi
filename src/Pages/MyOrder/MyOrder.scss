@@ -1,0 +1,48 @@
+::-webkit-scrollbar {
+    background: #f1d372;
+    border-radius: 1px;
+    width: 5px;
+}
+
+.my_order_container {
+    // overflow-y: hidden;
+    height: 600px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px 0 0;
+}
+
+.my_order_content {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my_order_content_image {
+
+    img {
+        width: 70px;
+        border-radius: 20px;
+    }
+}
+
+.my_order_content_price {
+    display: flex;
+    // flex-direction: column;
+    gap: 10px;
+}
+
+.my_order_content_icon {
+    width: 20px;
+    background-color: #f1d372;
+    border-radius: 50%;
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+}
