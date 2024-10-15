@@ -6,11 +6,24 @@ import './CheckoutSideMenu.scss';
 import OrderCard from '../OrderCard';
 
 const CheckoutSideMenu = () => {
-    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts, setCartProducts } = useContext(ShoppingCartContext)
+    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts, setCartProducts, setCount, count, order, setOrder } = useContext(ShoppingCartContext)
     
     const handleDelete = (id) => {
         const filteredProducts = cartProducts.filter(product => product.id != id)
         setCartProducts(filteredProducts)
+        setCount(count - 1)
+    }
+
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '01.02.23',
+            products: cartProducts,
+            totalProducts: cartProducts.length,
+            totalPrice: totalPrice(cartProducts)
+        }
+
+        setOrder([...order, orderToAdd])
+        setCartProducts([])
     }
 
     return (
@@ -44,6 +57,7 @@ const CheckoutSideMenu = () => {
                     <span className='total_price_content_title'>Total:</span>
                     <span className='total_price_content_total'>{totalPrice(cartProducts)} $</span>
                 </p>
+                <button className='btn_checkout' onClick={() => handleCheckout()}>Checkout</button>
             </div>
 
         </aside>
