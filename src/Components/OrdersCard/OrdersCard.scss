@@ -46,3 +46,16 @@
         transform: rotate(180deg);
     }
 }
+
+.icon_orders_content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon_orders {
+    width: 30px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
