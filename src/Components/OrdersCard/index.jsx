@@ -1,4 +1,3 @@
-import { XMarkIcon } from '@heroicons/react/24/solid'
 import './OrdersCard.scss'
 import React from 'react'
 
