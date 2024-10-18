@@ -7,7 +7,7 @@ import './CheckoutSideMenu.scss';
 import OrderCard from '../OrderCard';
 
 const CheckoutSideMenu = () => {
-    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts, setCartProducts, setCount, count, order, setOrder } = useContext(ShoppingCartContext)
+    const { closeCheckoutSideMenu, isCheckoutSideMenuOpen, cartProducts, setCartProducts, setCount, count, order, setOrder, setSearchByTitle } = useContext(ShoppingCartContext)
     
     const handleDelete = (id) => {
         const filteredProducts = cartProducts.filter(product => product.id != id)
@@ -26,8 +26,9 @@ const CheckoutSideMenu = () => {
         setOrder([...order, orderToAdd])
         setCartProducts([])
         setCount(0)
+        setSearchByTitle(null)
     }
-    // video 22
+
     return (
         <aside className={`${isCheckoutSideMenuOpen ? 'checkout_side_menu' : ''}`}>
             <div className='checkout_side_menu_content'>

@@ -5,18 +5,18 @@ import './NavBar.scss'
 
 const NavBar = () => {
 
-    const {count} = useContext(ShoppingCartContext)
+    const {count, setSearchByCategory} = useContext(ShoppingCartContext)
     
     return (
         <nav className='nav'>
             <ul className='nav_items'>
                 <li className='nav_items_li'><NavLink to='/'><span>Shopi</span></NavLink></li>
-                <li><NavLink to='/'>All</NavLink></li>
-                <li><NavLink to='/clothes'>Clothes</NavLink></li>
-                <li><NavLink to='/electronics'>Electronics</NavLink></li>
-                <li><NavLink to='/furnitures'>Furnitures</NavLink></li>
-                <li><NavLink to='/toys'>Toys</NavLink></li>
-                <li><NavLink to='/others'>Others</NavLink></li>
+                <li><NavLink to='/' onClick={() => setSearchByCategory()}>All</NavLink></li>
+                <li><NavLink to='/clothes' onClick={() => setSearchByCategory('clothes')}>Clothes</NavLink></li>
+                <li><NavLink to='/electronics' onClick={() => setSearchByCategory('electronics')}>Electronics</NavLink></li>
+                <li><NavLink to='/furnitures' onClick={() => setSearchByCategory('fornitures')}>Furnitures</NavLink></li>
+                <li><NavLink to='/toys' onClick={() => setSearchByCategory('toys')}>Toys</NavLink></li>
+                <li><NavLink to='/others' onClick={() => setSearchByCategory('others')}>Others</NavLink></li>
             </ul>
 
             <ul className='nav_items'>
