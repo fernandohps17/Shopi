@@ -3,6 +3,7 @@ import Layout from '../../Components/Layout'
 import OrdersCard from '../../Components/OrdersCard'
 import { ShoppingCartContext } from '../../Context'
 import { Link } from 'react-router-dom'
+import './MyOrders.scss';
 
 const MyOrders = () => {
 
@@ -25,4 +26,3 @@ const MyOrders = () => {
 }
 
 export default MyOrders
-// video 23 9m 47s

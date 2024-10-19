@@ -8,7 +8,7 @@ const ProductDetail = () => {
     const { closeProductDetail, isProductDetailOpen, productToShow } = useContext(ShoppingCartContext)
 
     return (
-        <aside className={`${isProductDetailOpen ? 'product_detail' : ''}`}>
+        <aside className={`${isProductDetailOpen ? 'product_detail' : 'product_detail_none'}`}>
             <div className='product_detail_content'>
                 <header className='product_detail_title'>
                     <h2>Detail</h2>

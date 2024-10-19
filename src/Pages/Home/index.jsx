@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import ProductDetail from '../../Components/ProductDetail'
 import Loader from '../../Components/Loaders'
@@ -8,7 +8,7 @@ import './Home.scss'
 
 const Home = () => {
 
-  const { loader, setLoader, setItems, items, searchByTitle, setSearchByTitle, filteredItems } = useContext(ShoppingCartContext)
+  const { loader, setSearchByTitle, filteredItems } = useContext(ShoppingCartContext)
 
   const renderView = () => {
     if (filteredItems?.length > 0) {
@@ -32,9 +32,6 @@ return (
       <br />
       <div className='search_input_content'>
         <input type="text" className='search_input' placeholder='Search a products' onChange={(event) => setSearchByTitle(event.target.value)} />
-        {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg> */}
       </div>
 
     </header>
